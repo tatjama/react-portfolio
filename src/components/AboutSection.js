@@ -17,7 +17,7 @@ const AboutSection = () => {
                         <h2> your <span>dreams</span> come</h2>
                     </Hide>
                     <Hide>
-                        <h2> reality.</h2>
+                        <h2> true.</h2>
                     </Hide>
                 </div>                
                 <p>Contact us for every photography, videography idea that you have. We have professionals
