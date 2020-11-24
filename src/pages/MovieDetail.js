@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
 import { useHistory } from 'react-router-dom';
 import {MovieState} from '../movieState';
+//Animations
+import { motion } from 'framer-motion';
+import { pageAnimation} from '../animation';
 
 const MovieDetail = () => {
     const history = useHistory();
@@ -16,27 +19,27 @@ const MovieDetail = () => {
     return(
         <>
         {movie &&(
-            <Details>
-            <HeadLine>
-                <h2>{movie.title}</h2>
-                <img src = {movie.mainImg} alt = {movie.title}/>
-            </HeadLine>     
-            <Awards>
-                {movie.awards.map((award) => (
-                    <Award title = {award.title} description = {award.description} key = {award.title}/>
-                ))}
-            </Awards>      
-            <ImageDisplay>
-                <img src = {movie.secondaryImg} alt = "movie"/>
-            </ImageDisplay> 
-        </Details>
+            <Details variants = {pageAnimation} initial = "hidden" animate = "show" exit = "exit">
+                <HeadLine>
+                    <h2>{movie.title}</h2>
+                    <img src = {movie.mainImg} alt = {movie.title}/>
+                </HeadLine>     
+                <Awards>
+                    {movie.awards.map((award) => (
+                        <Award title = {award.title} description = {award.description} key = {award.title}/>
+                    ))}
+                </Awards>      
+                <ImageDisplay>
+                    <img src = {movie.secondaryImg} alt = "movie"/>
+                </ImageDisplay> 
+            </Details>
         )}
         
         </>
     )
 }
 
-const Details = styled.div `
+const Details = styled(motion.div) `
 color: white;
 `
 const HeadLine = styled.div `
