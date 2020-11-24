@@ -1,6 +1,7 @@
 import React from 'react';
 //Sections import
 import home1 from '../img/home1.png';
+import Wave from '../Wave';
 // Animation
 import {motion} from 'framer-motion';
 import {titleAnimation, fade, imageAnimation } from '../animation';
@@ -30,6 +31,7 @@ const AboutSection = () => {
             <Image>
                 <motion.img variants = {imageAnimation} src = {home1} alt = "gay-with-camera"/>
             </Image>
+            <Wave/>
         </About>
     )
 }
