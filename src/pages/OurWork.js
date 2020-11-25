@@ -10,6 +10,7 @@ import theracer from '../img/theracer-small.png';
 import {motion} from 'framer-motion';
 import {pageAnimation, fade, imageAnimation, lineAnimation, slider, sliderContainer } from '../animation';
 import { UseScroll } from '../components/useScroll';
+import ScrollTop from '../components/ScrollTop';
 
 const OurWork = () => {
     const [ element, controls ] = UseScroll();
@@ -51,6 +52,7 @@ const OurWork = () => {
                     <img src = {goodtimes} alt = "good-time"/>
                 </Link>
             </Movie>
+            <ScrollTop/>
         </Work>
     )
 }
