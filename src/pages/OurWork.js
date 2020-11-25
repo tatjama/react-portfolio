@@ -9,8 +9,11 @@ import theracer from '../img/theracer-small.png';
 //Animations
 import {motion} from 'framer-motion';
 import {pageAnimation, fade, imageAnimation, lineAnimation, slider, sliderContainer } from '../animation';
+import { UseScroll } from '../components/useScroll';
 
 const OurWork = () => {
+    const [ element, controls ] = UseScroll();
+    const [ element2, controls2 ] = UseScroll();
     return(
         <Work 
             variants = {pageAnimation} 
@@ -27,23 +30,23 @@ const OurWork = () => {
             </motion.div>
             <Movie>
                 <motion.h1 variants = { fade }>The Athlete</motion.h1>
-                <motion.div variants = { lineAnimation } initial = "hidden" animate = "show" className = "line"></motion.div>
+                <motion.div variants = { lineAnimation } className = "line"></motion.div>
                 <Link to = "/work/the-athlete">
                     <Hide>
                         <motion.img variants = {imageAnimation} src = {athlete} alt = "the-athlete"/>
                     </Hide>
                 </Link>
             </Movie>
-            <Movie>
+            <Movie variants = { fade } animate = { controls } initial = "hidden" ref = {element}>
                 <h1>The Racer</h1>
-                <div className = "line"></div>
+                <motion.div variants = {lineAnimation} className = "line"></motion.div>
                 <Link to = "/work/the-racer">
                     <img src = {theracer} alt = "the-racer"/>
                 </Link>
             </Movie>
-            <Movie>
+            <Movie variants = { fade } animate = {controls2} initial = "hidden" ref = { element2 }>
                 <h1>Good Times</h1>
-                <div className = "line"></div>
+                <motion.div variants = { lineAnimation }  className = "line"></motion.div>
                 <Link to = "/work/good-times">
                     <img src = {goodtimes} alt = "good-time"/>
                 </Link>
@@ -60,7 +63,7 @@ h2{
     padding: 1rem 0rem;    
 }
 `
-const Movie = styled.div `
+const Movie = styled(motion.div) `
 padding-bottom: 10rem;
 .line{
     min-height: 0.5rem;
