@@ -64,6 +64,10 @@ margin: 5rem 10rem;
 display: flex;
 justify-content: space-around;
 align-items: center;
+@media screen and (max-width: 1300px){
+    display: block;
+    margin: 2rem 2rem;
+}
 `
 const AwardStyle = styled.div `
 padding: 5rem;
