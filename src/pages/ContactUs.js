@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 //Animations
 import { motion } from 'framer-motion';
 import {pageAnimation, titleAnimation} from '../animation';
@@ -21,10 +22,12 @@ const ContactUs = () => {
             </Title>
             <div>
                 <Hide>
-                    <Social variants = {titleAnimation}>
-                        <Circle/>
-                            <h2>Sent Us A Message.</h2>
-                    </Social>
+                    <Link to = "https://www.linkedin.com/in/tatjana-markovi%C4%87-919501189/">
+                        <Social variants = {titleAnimation}>
+                            <Circle/>
+                                <h2>Sent Us A Message.</h2>
+                        </Social>
+                    </Link>
                 </Hide>
                 <Hide>
                     <Social variants = {titleAnimation}>
